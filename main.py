@@ -44,10 +44,8 @@ while len(guessed_states) < 50:
     if answer_state in all_states and answer_state in guessed_states:
         print("you have already guessed it")
 
-missed_state = []
-for state in all_states:
-    if state not in guessed_states:
-        missed_state.append(state)
+missed_state = [state for state in all_states if state not in guessed_states]
+
 
 new_data = pandas.DataFrame(missed_state)
 
